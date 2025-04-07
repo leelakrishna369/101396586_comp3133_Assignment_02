@@ -1,0 +1,129 @@
+/* General styling for the page container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header Section */
+  .d-flex.justify-content-between {
+    margin-bottom: 20px;
+  }
+  
+  /* Heading Styles */
+  h2.text-dark {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  button.btn-outline-primary {
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Error Message */
+  .alert.alert-danger {
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .alert.alert-danger p {
+    margin-bottom: 0;
+  }
+  
+  /* Employee Details Card */
+  .card.shadow-lg {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  .text-center.mb-4 h5.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff;
+  }
+  
+  .text-center.mb-4 p.card-text {
+    font-size: 1.1rem;
+    color: #6c757d;
+  }
+  
+  /* Employee Info Section */
+  .employee-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+  
+  .employee-info a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .employee-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h2.text-dark {
+      font-size: 2rem;
+    }
+  
+    button.btn-outline-primary {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  
+    .card-body {
+      padding: 20px;
+    }
+  
+    .text-center.mb-4 h5.card-title {
+      font-size: 1.5rem;
+    }
+  
+    .employee-info p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Loading Spinner */
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3rem;
+  }
+  
+  .spinner-border.text-primary {
+    color: #007bff;
+  }
+
+/* Optional Styling for Image */
+img.img-fluid.rounded-circle {
+    width: 150px; /* Fixed size for circular profile image */
+    height: 150px; /* Fixed size for circular profile image */
+    object-fit: cover; /* Ensures image fits within the circle */
+    border-radius: 50%; /* Circular shape */
+  }
+  
+  

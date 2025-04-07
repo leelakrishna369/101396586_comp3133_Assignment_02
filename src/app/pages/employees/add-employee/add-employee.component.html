@@ -1,0 +1,158 @@
+<div class="container mx-auto mt-10 p-6 max-w-3xl bg-white shadow-2xl rounded-lg">
+    <h2 class="text-4xl font-semibold text-gray-800 mb-6">Add Employee</h2>
+  
+    <form [formGroup]="addEmployeeForm" (ngSubmit)="onAddEmployee()">
+                <!-- Image Upload -->
+<div class="mb-6">
+    <label for="image" class="text-lg font-medium text-gray-700">Upload Image</label>
+    <input
+      id="image"
+      type="file"
+      (change)="onImageSelect($event)"
+      class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+    />
+  </div>
+      <div class="grid grid-cols-2 gap-6">
+
+
+  
+        <!-- First Name -->
+        <div class="mb-6">
+          <label for="first_name" class="text-lg font-medium text-gray-700">First Name</label>
+          <input
+            id="first_name"
+            type="text"
+            formControlName="first_name"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          />
+          <div *ngIf="addEmployeeForm.get('first_name')?.invalid && addEmployeeForm.get('first_name')?.touched" class="text-red-600 mt-2">
+            First name is required
+          </div>
+        </div>
+  
+        <!-- Last Name -->
+        <div class="mb-6">
+          <label for="last_name" class="text-lg font-medium text-gray-700">Last Name</label>
+          <input
+            id="last_name"
+            type="text"
+            formControlName="last_name"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          />
+          <div *ngIf="addEmployeeForm.get('last_name')?.invalid && addEmployeeForm.get('last_name')?.touched" class="text-red-600 mt-2">
+            Last name is required
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="mb-6">
+          <label for="email" class="text-lg font-medium text-gray-700">Email</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          />
+          <div *ngIf="addEmployeeForm.get('email')?.invalid && addEmployeeForm.get('email')?.touched" class="text-red-600 mt-2">
+            Valid email is required
+          </div>
+        </div>
+  
+        <!-- Gender -->
+        <div class="mb-6">
+          <label for="gender" class="text-lg font-medium text-gray-700">Gender</label>
+          <select
+            id="gender"
+            formControlName="gender"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          >
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <div *ngIf="addEmployeeForm.get('gender')?.invalid && addEmployeeForm.get('gender')?.touched" class="text-red-600 mt-2">
+            Gender is required
+          </div>
+        </div>
+  
+        <!-- Designation -->
+        <div class="mb-6">
+          <label for="designation" class="text-lg font-medium text-gray-700">Designation</label>
+          <input
+            id="designation"
+            type="text"
+            formControlName="designation"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          />
+          <div *ngIf="addEmployeeForm.get('designation')?.invalid && addEmployeeForm.get('designation')?.touched" class="text-red-600 mt-2">
+            Designation is required
+          </div>
+        </div>
+  
+        <!-- Salary -->
+        <div class="mb-6">
+          <label for="salary" class="text-lg font-medium text-gray-700">Salary</label>
+          <input
+            id="salary"
+            type="number"
+            formControlName="salary"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          />
+          <div *ngIf="addEmployeeForm.get('salary')?.invalid && addEmployeeForm.get('salary')?.touched" class="text-red-600 mt-2">
+            Salary is required and must be greater than 0
+          </div>
+        </div>
+  
+        <!-- Date of Joining -->
+        <div class="mb-6">
+          <label for="date_of_joining" class="text-lg font-medium text-gray-700">Date of Joining</label>
+          <input
+            id="date_of_joining"
+            type="date"
+            formControlName="date_of_joining"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          />
+          <div *ngIf="addEmployeeForm.get('date_of_joining')?.invalid && addEmployeeForm.get('date_of_joining')?.touched" class="text-red-600 mt-2">
+            Date of joining is required
+          </div>
+        </div>
+  
+        <!-- Department -->
+        <div class="mb-6">
+          <label for="department" class="text-lg font-medium text-gray-700">Department</label>
+          <input
+            id="department"
+            type="text"
+            formControlName="department"
+            class="mt-2 p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+          />
+          <div *ngIf="addEmployeeForm.get('department')?.invalid && addEmployeeForm.get('department')?.touched" class="text-red-600 mt-2">
+            Department is required
+          </div>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="mt-8">
+        <button
+          type="submit"
+          [disabled]="addEmployeeForm.invalid"
+          class="w-full py-3 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 ease-in-out"
+        >
+          Add Employee
+        </button>
+      </div>
+    </form>
+  
+    <!-- Back Button -->
+    <div class="mt-6 text-center">
+      <button
+        class="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-300 ease-in-out"
+        (click)="onGoBack()"
+      >
+        Back to Employee List
+      </button>
+    </div>
+  </div>
+  

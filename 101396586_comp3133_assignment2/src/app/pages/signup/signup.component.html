@@ -1,0 +1,41 @@
+<div class="signup-container">
+    <mat-card class="signup-card">
+      <h2 class="mat-title text-center">Create Account</h2>
+  
+      <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" placeholder="Enter your name" />
+          <mat-error *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+            Name is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Enter your email" />
+          <mat-error *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+            Valid email required.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Enter your password" />
+          <mat-error *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+            Password is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" class="full-width" [disabled]="signupForm.invalid">
+          Sign Up
+        </button>
+      </form>
+  
+      <p class="mt-2 text-center">
+        Already have an account?
+        <a routerLink="/login">Log in here</a>
+      </p>
+    </mat-card>
+  </div>
+  

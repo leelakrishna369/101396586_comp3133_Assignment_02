@@ -1,0 +1,66 @@
+<form [formGroup]="editEmployeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+    <h2>Edit Employee Details</h2>
+  
+    <!-- First Name -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="first_name" id="first_name" required>
+      <mat-error *ngIf="editEmployeeForm.get('first_name')?.invalid && editEmployeeForm.get('first_name')?.touched">
+        First Name is required.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Last Name -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="last_name" id="last_name" required>
+      <mat-error *ngIf="editEmployeeForm.get('last_name')?.invalid && editEmployeeForm.get('last_name')?.touched">
+        Last Name is required.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Email -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" id="email" required>
+      <mat-error *ngIf="editEmployeeForm.get('email')?.invalid && editEmployeeForm.get('email')?.touched">
+        Please provide a valid email.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Salary -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Salary</mat-label>
+      <input matInput type="number" formControlName="salary" id="salary" required>
+      <mat-error *ngIf="editEmployeeForm.get('salary')?.invalid && editEmployeeForm.get('salary')?.touched">
+        Salary must be a positive number.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Designation -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Designation</mat-label>
+      <input matInput formControlName="designation" id="designation" required>
+      <mat-error *ngIf="editEmployeeForm.get('designation')?.invalid && editEmployeeForm.get('designation')?.touched">
+        Designation is required.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Department -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="department" id="department" required>
+      <mat-error *ngIf="editEmployeeForm.get('department')?.invalid && editEmployeeForm.get('department')?.touched">
+        Department is required.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Action Buttons -->
+    <div class="form-buttons">
+      <button mat-raised-button color="primary" type="submit" [disabled]="editEmployeeForm.invalid">
+        Save Changes
+      </button>
+      <button mat-button color="accent" (click)="goBack()">Back</button>
+    </div>
+  </form>
+  
